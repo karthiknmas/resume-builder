@@ -1,0 +1,100 @@
+<div class="card mx-5 mt-5">
+  <div class="card-header">
+    <h3 class="mr-4 p-4 fs-4 fw-bold">Person Detail</h3>
+    <hr />
+    <form [formGroup]="personForm">
+      <div class="card-body form-group row m-3">
+        <label for="fname" class="col-sm-4 col-form-label">First Name:</label>
+        <div class="col-sm-7">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="First Name"
+            formControlName="first_name"
+            [ngClass]="{ 'is-invalid': submitted && f['first_name'].errors }"
+          />
+          <span
+            *ngIf="submitted && f['first_name'].errors"
+            class="invalid-feedback"
+          >
+            <span *ngIf="f['first_name'].errors['required']"
+              >First Name is required</span
+            >
+          </span>
+        </div>
+      </div>
+      <div class="card-body form-group row m-3">
+        <label for="lname" class="col-sm-4 col-form-label">Last Name:</label>
+        <div class="col-sm-7">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="last_name"
+            placeholder="Last Name"
+            [ngClass]="{ 'is-invalid': submitted && f['last_name'].errors }"
+          />
+
+          <span
+            *ngIf="submitted && f['last_name'].errors"
+            class="invalid-feedback"
+          >
+            <span *ngIf="f['last_name'].errors['required']"
+              >Last Name is required</span
+            >
+          </span>
+        </div>
+      </div>
+      <div class="card-body form-group row m-3">
+        <label for="email" class="col-sm-4 col-form-label">Email:</label>
+        <div class="col-sm-7">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="email"
+            placeholder="Email"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+          />
+
+          <span *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <span *ngIf="f['email'].errors['required']">Email is required</span>
+            <span
+              *ngIf="f['email'].errors?.['pattern']"
+              class="invalid-feedback"
+              >Please provide a valid email address</span
+            >
+          </span>
+        </div>
+      </div>
+      <div class="card-body form-group row m-3">
+        <label for="mobile" class="col-sm-4 col-form-label">Mobile:</label>
+        <div class="col-sm-7">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="mobile"
+            placeholder="Mobile"
+            [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }"
+          />
+          <span
+            *ngIf="submitted && f['mobile'].errors"
+            class="invalid-feedback"
+          >
+            <span *ngIf="f['mobile'].errors['required']"
+              >Mobile is required</span
+            >
+          </span>
+        </div>
+      </div>
+    </form>
+    <div class="d-flex justify-content-end m-4 py-3 px-5">
+      <button
+        type="button"
+        class="btn btn-primary btn-lg"
+        (click)="onSubmit(personForm.value)"
+        [disabled]="personForm.value.$invalid"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

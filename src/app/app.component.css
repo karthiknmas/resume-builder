@@ -1,0 +1,42 @@
+/* table {
+  border-collapse: collapse;
+
+  text-align: center;
+  overflow: auto;
+  display: inline-block;
+
+}
+table td,
+table th {
+  border: solid 2px rgb(8, 8, 8);
+  padding: 20px;
+}
+#center {
+  margin-left: 600px;
+
+}
+th {
+  height: 30px;
+  background-color: rgb(31, 148, 113);
+}
+#center tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+#center tr:hover {
+  background-color: #ddd;
+}
+.scroll {
+  height: 900px;
+}
+.scroll thead th {
+  position: sticky;
+  top: 0;
+}
+input {
+  margin: auto;
+  display: block;
+}
+label {
+  margin-left: 800px;
+  display: block;
+} */
